@@ -15,8 +15,8 @@ http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/m
 output application/json
 ---
 {
-	origin: p('mock.origin'),
-	destination: p('mock.destination'),
+	origin: message.attributes.queryParams.origin,
+	destination: message.attributes.queryParams.destination,
 	date: attributes.queryParams.travelDate,
 	time: now() as String {format: "hh:mm"}
 }]]></ee:set-payload>
