@@ -8,6 +8,11 @@ Endpoint
 http://train-details-system-api.us-e2.cloudhub.io/api/trainDetails?origin=London&destination=Looe&travelDate=2020-12-20
 ```
 
+External Endpoint Point
+```
+https://transportapi.com:443/v3/uk/public/journey/from/tiploc:Lydney/to/tiploc:Looe/at/2020-12-30/12:00.json?app_id=*******&app_key=*********&modes=train&service=tfl
+```
+
 QueryParameters
 ```
 origin : origin station Name
