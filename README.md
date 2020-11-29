@@ -1,6 +1,6 @@
 # train-details-system-api
 
-About the project:
+###About the project:
 trainDetails System API return the train details like arrival time, departure time, source, destination, train no and total duration
 
 Endpoint
