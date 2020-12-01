@@ -23,17 +23,14 @@ output application/json
 			</ee:message>
 		</ee:transform>
 		<http:request method="GET" doc:name="requestTrainDetails" doc:id="8cb17b8e-046e-466f-9d2d-5762dc0b95c3" config-ref="httpRequestConfiguration" path="${train.path}/{fromStation}/to/{toStation}/at/{date}/{time}">
-			<http:uri-params ><![CDATA[#[output application/java
----
-{
-	"date" : payload.date,
-	"fromStation" : payload.origin,
-	"toStation" : payload.destination,
-	"time" : payload.time
-}]]]></http:uri-params>
+			
 			<http:query-params ><![CDATA[#[output application/java
 ---
-{
+{	
+	"date" : payload.date,
+	"time" : payload.time,
+	"fromStation" : attributes.queryParams.origin as String,
+	"toStation" : attributes.queryParams.destination as String,
 	"service" : p('train.service'),
 	"modes" : p('train.modes'),
 	"app_id" : p('train.appId'),
